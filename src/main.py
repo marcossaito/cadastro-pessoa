@@ -64,7 +64,7 @@ class MyApp(App):
 		self.labels_on_grid = []
 
 		for name in names:
-			text = TextInput(multiline=False)
+			text = TextInput(multiline=False,size=(.5,.5))
 			self.texts_on_grid.append(text)
 			label = Label(text=name)
 			self.labels_on_grid.append(label)
