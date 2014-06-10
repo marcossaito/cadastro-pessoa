@@ -58,4 +58,3 @@ virtualenvwrapper==4.3
 wsgiref==0.1.2
 xdiagnose==3.5.1
 zope.interface==4.0.5
-# novo commit
