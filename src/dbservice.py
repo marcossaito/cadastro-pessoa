@@ -48,6 +48,9 @@ class DBservice(object):
 
 	def insert_user(self,insert_tuple):
 		
+		if insert_tuple == ('','',''):
+			return False
+
 		if os.path.isfile( "{0}/{1}.db".format(self.LOCAL,self.dbname) ):
 			self.c.execute('''INSERT INTO user VALUES (NULL,?,?,?)''',insert_tuple)
 			self.conn.commit()
@@ -56,6 +59,10 @@ class DBservice(object):
 			return False
 
 		return True
+
+	def select_all_user(self):
+
+		return self.c.execute('''SELECT * FROM user''')
 
 def create_default_db():
 	conn = sqlite3.connect( "{0}/{1}.db".format(self.LOCAL,"appdb") )
